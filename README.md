@@ -1,14 +1,14 @@
-# Wazuh Manager Installation Automation
+# CCAP - Centralized Cloud Automation Program 
 
 This repository contains C++ programs for automating the installation of security tools on Ubuntu servers.
 
 ## Programs
 
-### 1. Wazuh Manager Installer (`install_wazuh.cpp`)
+### 1. CCAP Manager for Manage server (`ccap_manager.cpp`)
 
 Automates the installation of Wazuh Manager on an Ubuntu server. It starts by updating and upgrading the system, then proceeds with adding the Wazuh repository, installing dependencies, and setting up the Wazuh Manager service.
 
-### 2. Security Tools Installer (`install_security_tools.cpp`)
+### 2. CCAP agent for End-Point (`ccap_agent.cpp`)
 
 Automates the installation of multiple security tools on Ubuntu servers: Suricata, Falco, ClamAV, and Wazuh Agent. Starts with system update and upgrade.
 
@@ -29,13 +29,13 @@ Automates the installation of multiple security tools on Ubuntu servers: Suricat
    ```
 3. Or compile specific programs:
    ```
-   make install_wazuh
-   make install_security_tools
+   make ccap_manager
+   make ccap_agent
    ```
 4. Run the programs with sudo privileges:
    ```
-   sudo ./install_wazuh
-   sudo ./install_security_tools
+   sudo ./ccap_manager
+   sudo ./ccap_agent
    ```
 5. To clean up compiled files:
    ```
@@ -58,26 +58,26 @@ Automates the installation of multiple security tools on Ubuntu servers: Suricat
    sudo ./<executable_name>
    ```
 
-### For Wazuh Manager Installer:
-- File: `install_wazuh.cpp`
-- Executable: `install_wazuh`
+### For CCAP Manager Installer:
+- File: `ccap_manager.cpp`
+- Executable: `ccap_manager`
 
-### For Security Tools Installer:
-- File: `install_security_tools.cpp`
-- Executable: `install_security_tools`
+### For CCAP Agent Installer:
+- File: `ccap_agent.cpp`
+- Executable: `ccap_agent`
 
 ## Installed Tools
 
-### Security Tools Installer installs:
+### CCAP Agent installs:
 - **Suricata**: Network IDS/IPS
 - **Falco**: Runtime security monitoring
 - **ClamAV**: Antivirus engine
-- **Wazuh Agent**: Security monitoring agent (requires configuration to connect to Wazuh Manager)
+- **Wazuh Agent**: Security monitoring agent (requires configuration to connect to Wazuh Manager in CCAP Manager)
 
 ## Notes
 
 - Ensure your system meets the hardware and software requirements for the installed tools.
-- Wazuh Agent installation requires additional configuration to connect to a Wazuh Manager.
+- Wazuh Agent from CCAP Agent installation requires additional configuration to connect to a Wazuh Manager from CCAP Manager.
 - The programs use the latest stable versions available in the repositories.
 - All installations are performed with non-interactive flags where possible.
 
